@@ -6,7 +6,7 @@ from os.path import join
 
 
 class PyjniusRecipe(PyProjectRecipe):
-    version = '1.6.1.429'
+    version = '1.6.01'
     url = 'https://github.com/kmedya-dev/pyjnius/archive/{version}.zip'
     name = 'pyjnius'
     depends = [('genericndkbuild', 'sdl2', 'sdl3'), 'six']
