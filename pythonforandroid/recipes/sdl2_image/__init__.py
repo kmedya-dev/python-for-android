@@ -5,7 +5,7 @@ from pythonforandroid.recipe import BootstrapNDKRecipe
 
 
 class LibSDL2Image(BootstrapNDKRecipe):
-    version = '2.8.2'
+    version = '2.8.8'
     url = 'https://github.com/libsdl-org/SDL_image/releases/download/release-{version}/SDL2_image-{version}.tar.gz'
     dir_name = 'SDL2_image'
 

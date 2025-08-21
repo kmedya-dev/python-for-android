@@ -13,7 +13,7 @@ MIN_NDK_VERSION = 27
 MAX_NDK_VERSION = 27  # can be increased later
 
 # buildozer parses this
-RECOMMENDED_NDK_VERSION = 27d
+RECOMMENDED_NDK_VERSION = 27
 
 NDK_DOWNLOAD_URL = "https://developer.android.com/ndk/downloads/"
 
