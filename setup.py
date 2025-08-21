@@ -20,9 +20,9 @@ data_files = []
 # must be a single statement since buildozer is currently parsing it, refs:
 # https://github.com/kivy/buildozer/issues/722
 install_reqs = [
-    'appdirs', 'colorama>=0.3.3', 'jinja2',
-    'sh>=2, <3.0; sys_platform!="win32"',
-    'build', 'toml', 'packaging', 'setuptools', 'wheel~=0.43.0'
+    'appdirs==1.4.4', 'colorama==0.4.6', 'jinja2==3.1.6',
+    'sh>=2.2.2, <3.0; sys_platform!="win32"',
+    'build==1.3.0', 'toml==0.10.2', 'packaging==25.0', 'setuptools==80.9.0', 'wheel~=0.45.0'
 ]
 # (build and toml are used by pythonpackage.py)
 
