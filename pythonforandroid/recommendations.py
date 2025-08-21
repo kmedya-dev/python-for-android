@@ -9,11 +9,11 @@ from pythonforandroid.logger import info, warning
 from pythonforandroid.util import BuildInterruptingException
 
 # We only check the NDK major version
-MIN_NDK_VERSION = 25
-MAX_NDK_VERSION = 25
+MIN_NDK_VERSION = 27
+MAX_NDK_VERSION = 27
 
 # DO NOT CHANGE LINE FORMAT: buildozer parses the existence of a RECOMMENDED_NDK_VERSION
-RECOMMENDED_NDK_VERSION = "28c"
+RECOMMENDED_NDK_VERSION = "27d"
 
 NDK_DOWNLOAD_URL = "https://developer.android.com/ndk/downloads/"
 
