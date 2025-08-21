@@ -48,7 +48,7 @@ ENV HOME_DIR="/home/${USER}"
 ENV WORK_DIR="${HOME_DIR}/app" \
     PATH="${HOME_DIR}/.local/bin:${PATH}" \
     ANDROID_HOME="${HOME_DIR}/.android" \
-    JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+    JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 
 
 # install system dependencies
