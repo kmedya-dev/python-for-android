@@ -46,7 +46,7 @@ on:
       requirements:
         description: "Comma separated requirements"
         required: true
-        default: "python3,kivy"
+        default: "python3,kivy  @ git+https://github.com/kmedya-dev/kivy.git@main"
 
 env:
   APK_ARTIFACT_FILENAME: bdist_unit_tests_app-debug-1.1.apk
@@ -67,7 +67,7 @@ jobs:
         run: make docker/build
       - name: Build multi-arch artifact with docker
         run: |
-          docker run --name p4a-latest kivy/python-for-android make ARCH=${{ github.event.inputs.arch }} ARTIFACT=${{ github.event.inputs.artifact }} BOOTSTRAP=${{ github.event.inputs.bootstrap }} MODE=${{ github.event.inputs.mode }} REQUIREMENTS=${{ github.event.inputs.requirements }} testapps-generic
+          docker run --name p4a-latest kmedya-dev/python-for-android make ARCH=${{ github.event.inputs.arch }} ARTIFACT=${{ github.event.inputs.artifact }} BOOTSTRAP=${{ github.event.inputs.bootstrap }} MODE=${{ github.event.inputs.mode }} REQUIREMENTS=${{ github.event.inputs.requirements }} testapps-generic
       - name: Copy produced artifacts from docker container (*.apk, *.aab)
         if: github.event.inputs.bootstrap != 'service_library'
         run: |
