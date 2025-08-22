@@ -24,8 +24,6 @@ class LibffiRecipe(Recipe):
     def build_arch(self, arch):
         env = self.get_recipe_env(arch)
         with current_directory(self.get_build_dir(arch.arch)):
-            if not exists('configure'):
-                shprint(sh.Command('./autogen.sh'), _env=env)
             shprint(sh.Command('libtoolize'), '--copy', _env=env)
             shprint(sh.Command('aclocal'), '-I', 'm4', _env=env)
             shprint(sh.Command('autoreconf'), '-vif', '-I', 'm4', _env=env)
