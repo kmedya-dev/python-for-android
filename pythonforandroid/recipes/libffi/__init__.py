@@ -24,9 +24,7 @@ class LibffiRecipe(Recipe):
     def build_arch(self, arch):
         env = self.get_recipe_env(arch)
         with current_directory(self.get_build_dir(arch.arch)):
-            shprint(sh.Command('libtoolize'), '--copy', _env=env)
-            shprint(sh.Command('aclocal'), '-I', 'm4', _env=env)
-            shprint(sh.Command('autoreconf'), '-vif', '-I', 'm4', _env=env)
+            shprint(sh.autoreconf, '-vif', _env=env)
             shprint(sh.Command('./configure'),
                     '--host=' + arch.command_prefix,
                     '--prefix=' + self.get_build_dir(arch.arch),
