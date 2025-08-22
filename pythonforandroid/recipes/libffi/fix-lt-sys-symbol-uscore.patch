@@ -1,0 +1,15 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -228,6 +228,6 @@
+-LT_SYS_SYMBOL_USCORE
+-if test "x$sys_symbol_underscore" = xyes; then
+-    AC_DEFINE(SYMBOL_UNDERSCORE, 1, [Define if symbols are underscored.])
+-fi
+-
+-FFI_EXEC_TRAMPOLINE_TABLE=0
++
++
++
++
++
++FFI_EXEC_TRAMPOLINE_TABLE=0
