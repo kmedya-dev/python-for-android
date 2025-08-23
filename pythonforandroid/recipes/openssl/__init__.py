@@ -97,7 +97,7 @@ class OpenSSLRecipe(Recipe):
         env['OPENSSL_VERSION'] = self.version
         env['MAKE'] = 'make'  # This removes the '-j5', which isn't safe
         env['CC'] = 'clang'
-        env['ANDROID_NDK_ROOT'] = self.ctx.ndk_dir
+        env['ANDROID_NDK_HOME'] = self.ctx.ndk_dir
         return env
 
     def select_build_arch(self, arch):
@@ -129,9 +129,7 @@ class OpenSSLRecipe(Recipe):
                 '-D__ANDROID_API__={}'.format(self.ctx.ndk_api),
             ]
             shprint(perl, 'Configure', *config_args, _env=env)
-            self.apply_patch('disable-sover.patch', arch.arch)
-
-            shprint(sh.make, 'build_libs', _env=env)
+            shprint(sh.make, 'CALC_VERSIONS="SHLIB_COMPAT=; SHLIB_SOVER="', 'build_libs', _env=env)
 
 
 recipe = OpenSSLRecipe()
