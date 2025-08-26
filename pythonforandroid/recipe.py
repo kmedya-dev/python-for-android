@@ -1036,8 +1036,8 @@ class PythonRecipe(Recipe):
         ]
         if force_upgrade:
             pip_options.append("--upgrade")
-        # Use system's pip
-        shprint(sh.pip, *pip_options)
+        # Use hostpython's pip
+        shprint(sh.Command(self.ctx.hostpython), '-m', 'pip', *pip_options)
 
     def restore_hostpython_prerequisites(self, packages):
         _packages = []
